@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using CreateStaffMemberDemo;
 
 public partial class CreateStaff : System.Web.UI.Page
 {
@@ -16,7 +17,12 @@ public partial class CreateStaff : System.Web.UI.Page
     // Button click event to submit user data
     protected void SubmitButton_Click(object sender, EventArgs e)
     {
+        string firstName = this.FirstName.Value;
+        string lastName = this.LastName.Value;
+        string emailAddress = this.EmailAddress.Value;
+        string password = this.Password.Value;
 
+        
     }
 
     // Method to display volunteer roles
@@ -28,6 +34,7 @@ public partial class CreateStaff : System.Web.UI.Page
     // Method to create a new staff member (write file to JSON)
     protected void CreateNewStaffMember()
     {
+        // Write data to JSON file...
 
     }
 

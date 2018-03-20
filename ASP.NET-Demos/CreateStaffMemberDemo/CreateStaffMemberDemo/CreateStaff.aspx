@@ -14,18 +14,17 @@
             <div id="create-new-staff-member">
                 <h1 class="main-heading">Welcome! Please input your details to get started</h1>
                 <h3 class="sub-heading">Input Your First Name Here:</h3>
-                <input id="first-name" type="text" />
+                <input id="FirstName" type="text" runat="server"/>
                 <h3 class="sub-heading">Input Your Last Name Here:</h3>
-                <input id="last-name" type="text" />
+                <input id="LastName" type="text" runat="server"/>
                 <h3 class="sub-heading">Input Your Email Address Here:</h3>
-                <input id="email-address" type="text" />
+                <input id="EmailAddress" type="text" runat="server"/>
                 <h3 class="sub-heading">Input Your Password Here:</h3>
-                <input id="password" type="text" />
+                <input id="Password" type="text" runat="server"/>
                 <h3 class="sub-heading">Are You A Volunteer?</h3>
                 <asp:CheckBox ID="VolunteerCheckbox" runat="server" text="Are you a volunteer?"/>
                 <h3 class="sub-heading">Library Role:</h3>
                 <asp:DropDownList ID="ChooseRole" runat="server"></asp:DropDownList>
-                <br />
                 <h3 class="sub-heading">All Done? Submit your data below.</h3>
                 <asp:Button ID="SubmitButton" runat="server" Text="Submit!" OnClick="SubmitButton_Click" />
             </div>
