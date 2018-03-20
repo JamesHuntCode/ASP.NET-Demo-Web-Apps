@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CreateStaffMemberDemo", "CreateStaffMemberDemo\", "{BC71CE25-A4FE-47CE-98A1-6CDD4060CE6F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49959"
+		Debug.AspNetCompiler.PhysicalPath = "CreateStaffMemberDemo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49959\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49959"
+		Release.AspNetCompiler.PhysicalPath = "CreateStaffMemberDemo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49959\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49959"
+		SlnRelativePath = "CreateStaffMemberDemo\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC71CE25-A4FE-47CE-98A1-6CDD4060CE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC71CE25-A4FE-47CE-98A1-6CDD4060CE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01043E42-2B3F-4D77-A403-5DB40AAF21C5}
+	EndGlobalSection
+EndGlobal
