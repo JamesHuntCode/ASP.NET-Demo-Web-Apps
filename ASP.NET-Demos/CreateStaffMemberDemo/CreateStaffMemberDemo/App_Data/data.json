@@ -1,0 +1,26 @@
+[
+  {
+    "Role": { "Description": "Head Librarian" },
+    "First_Name": "Shirley",
+    "Last_Name": "Atkinson",
+    "Email": "shirley@shirley.com",
+    "Password": "boggoff",
+    "Volunteer" :  false
+  },
+  {
+    "Role": { "Description": "Check Out Desk Librarian" },
+    "First_Name": "Fred",
+    "Last_Name": "Bloggs",
+    "Email": "fred@fred.com",
+    "Password": "letmein",
+    "Volunteer": false
+  },
+  {
+    "Role": { "Description": "Chief Librarian" },
+    "First_Name": "Mary",
+    "Last_Name": "Squire",
+    "Email": "mary@mary.com",
+    "Password": "letmeout",
+    "Volunteer": false
+  }
+]
