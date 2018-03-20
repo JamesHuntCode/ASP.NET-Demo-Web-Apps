@@ -22,7 +22,12 @@
                 <h3 class="sub-heading">Input Your Password Here:</h3>
                 <input id="password" type="text" />
                 <h3 class="sub-heading">Are You A Volunteer?</h3>
+                <asp:CheckBox ID="VolunteerCheckbox" runat="server" text="Are you a volunteer?"/>
+                <h3 class="sub-heading">Library Role:</h3>
                 <asp:DropDownList ID="ChooseRole" runat="server"></asp:DropDownList>
+                <br />
+                <h3 class="sub-heading">All Done? Submit your data below.</h3>
+                <asp:Button ID="SubmitButton" runat="server" Text="Submit!" OnClick="SubmitButton_Click" />
             </div>
             <!-- end of new staff creation section -->
         </div>
