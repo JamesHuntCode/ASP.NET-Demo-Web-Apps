@@ -39,10 +39,11 @@ $(document).ready(function() {
         var currentX = nowX;
         var currentY = nowY;
 
-        var closestX = Infinity, closestY = Infinity;
+        var closestX = Infinity;
+        var closestY = Infinity;
 
         for (let i = 0; i < possibleLocations.length; i++) {
-            // check distance
+            // check closest location and update...
         }
 
         return [closestX, closestY];
@@ -50,7 +51,7 @@ $(document).ready(function() {
 
     // Method to snap draggable icon into place
     function setFixedLocation(item, moveX, moveY) {
-        // set positions here
+        // set new positions here...
     }
 
     // custom snapping method
@@ -62,6 +63,7 @@ $(document).ready(function() {
         var imageX = icon.position().left;
         var imageY = icon.position().top;
 
+        // Retrieve closest point
         var closestPoint = findClosestSnappingPoint(imageX, imageY, possibleLocations);
 
         // Pin draggable icon to closest suitable position
