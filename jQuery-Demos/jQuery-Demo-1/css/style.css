@@ -3,3 +3,19 @@ body {
     padding: 0px;
     overflow-x: hidden;
 }
+
+.main-heading {
+    font-family: arial;
+    font-size: 50px;
+    text-align: center;
+    margin: 50px;
+}
+
+.image {
+    height: 200px;
+    width: 200px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: teal;
+    cursor: pointer;
+}
