@@ -16,6 +16,10 @@ body {
     width: 200px;
     margin: 10px auto;
     border-radius: 10px;
-    background-color: teal;
     cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }

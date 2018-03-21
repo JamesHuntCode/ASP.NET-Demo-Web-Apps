@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('.image').draggable();
 
     // give each image a random color
-    var colors = ["red", "blue", "green", "yellow", "orange"];
+    var colors = ["red", "blue", "green", "yellow", "orange", "crimson", "teal"];
     var images = [$('#top-left'), $('#top-mid'), $('#top-right'), $('#bottom-left'), $('#bottom-mid'), $('#bottom-right')];
 
     for (let i = 0; i < images.length; i++) {
@@ -12,9 +12,10 @@ $(document).ready(function() {
 
     // make image snap into determined locations
     $('.image').on('mouseup', function() {
-        snapToPlace($(this).position());
+        snapToPlace($(this));
     });
 
+    // Method to populate array with x & y coords
     function populate2DLocationArray() {
         // Possible locations where the image can snap
         var snappingLoctions = [
@@ -32,22 +33,38 @@ $(document).ready(function() {
         return locationCoords;
     }
 
+    // Method to systematically locate the closest snapping point
+    function findClosestSnappingPoint(nowX, nowY, possibleLocations) {
+        // Current coords of the image being dragged
+        var currentX = nowX;
+        var currentY = nowY;
+
+        var closestX = Infinity, closestY = Infinity;
+
+        for (let i = 0; i < possibleLocations.length; i++) {
+            // check distance
+        }
+
+        return [closestX, closestY];
+    }
+
+    // Method to snap draggable icon into place
+    function setFixedLocation(item, moveX, moveY) {
+        // set positions here
+    }
+
     // custom snapping method
-    function snapToPlace(currentPos) {
+    function snapToPlace(icon) {
         // 2D array of x/y locations of snapping points
         var possibleLocations = populate2DLocationArray();
 
         // Current position of currently selected element
-        var imageX = currentPos.left;
-        var imageY = currentPos.top;
+        var imageX = icon.position().left;
+        var imageY = icon.position().top;
 
-        var closestX, closestY = Infinity;
+        var closestPoint = findClosestSnappingPoint(imageX, imageY, possibleLocations);
 
-        // Find closest possible location to snap to
-        for (let i = 0; i < possibleLocations.length; i++) {
-            if (/* check if possible locations[i] is closer than X and Y */) {
-
-            }
-        }
+        // Pin draggable icon to closest suitable position
+        setFixedLocation(icon, closestPoint[0], closestPoint[1]);
     };
 });
