@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 using CreateStaffMemberDemo;
+using Newtonsoft.Json;
 
 public partial class CreateStaff : System.Web.UI.Page
 {
@@ -19,15 +20,28 @@ public partial class CreateStaff : System.Web.UI.Page
     // Button click event to submit user data
     protected void SubmitButton_Click(object sender, EventArgs e)
     {
-        string firstName = this.FirstName.Value;
-        string lastName = this.LastName.Value;
-        string emailAddress = this.EmailAddress.Value;
-        string password = this.Password.Value;
+        Staff newStaff = new Staff();
 
-        
+        newStaff.First_Name = this.FirstName.Value;
+        newStaff.Last_Name = this.LastName.Value;
+        newStaff.Email = this.EmailAddress.Value;
+        newStaff.Password = this.Password.Value;
+        newStaff.Volunteer = this.VolunteerCheckbox.Checked;
+        newStaff.Role = new Role { Description = this.ChooseRole.SelectedValue };
+
+        if (!CheckStaffExists(newStaff))
+        {
+            // Create new member of staff (no duplicated detected)
+            this.CreateNewStaffMember(newStaff);
+        }
+        else
+        {
+            // Do not create new staff member (alert user of duplicate data entry)
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Oops! Duplicate Data Detected!')", true);
+        }
     }
 
-    // Method to display volunteer roles
+    // Method to display possible roles
     protected List<Role> ListRoles()
     {
         List<Role> possibleRoles = new List<Role>();
@@ -40,15 +54,29 @@ public partial class CreateStaff : System.Web.UI.Page
     }
 
     // Method to create a new staff member (write file to JSON)
-    protected void CreateNewStaffMember()
+    protected void CreateNewStaffMember(Staff newStaff)
     {
-        // Write data to JSON file...
-
+        // write data to file
     }
 
     // Method to check if data being input already exists
     protected bool CheckStaffExists(Staff staffMember)
     {
-        return true;
+        bool exists = false;
+
+        string path = Server.MapPath("~/App_Data/data.json");
+        string content = File.ReadAllText(path);
+
+        List<Staff> staffMembers = JsonConvert.DeserializeObject<List<Staff>>(content);
+
+        for (int i = 0; i < staffMembers.Count; i++)
+        {
+            if (staffMember.Email == staffMembers[i].Email)
+            {
+                exists = true;
+            }
+        }
+
+        return exists;
     }
 }
