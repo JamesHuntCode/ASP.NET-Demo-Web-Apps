@@ -56,7 +56,18 @@ public partial class CreateStaff : System.Web.UI.Page
     // Method to create a new staff member (write file to JSON)
     protected void CreateNewStaffMember(Staff newStaff)
     {
-        // write data to file
+        string path = Server.MapPath("~/App_Data/data.json");
+        string content = File.ReadAllText(path);
+
+        List<Staff> staffMembers = JsonConvert.DeserializeObject<List<Staff>>(content);
+        staffMembers.Add(newStaff);
+
+        string serialiseStaff = JsonConvert.SerializeObject(staffMembers);
+
+        using (StreamWriter mySR = new StreamWriter(path))
+        {
+            mySR.Write(serialiseStaff);
+        }
     }
 
     // Method to check if data being input already exists
